@@ -22,8 +22,7 @@
                                 <subviews>
                                     <stepper opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minimumValue="2" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="YeI-zz-R9E">
                                         <rect key="frame" x="0.0" y="0.5" width="94" height="32"/>
-                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                        <color key="tintColor" name="AccentColor"/>
+                                        <color key="tintColor" systemColor="linkColor"/>
                                         <connections>
                                             <action selector="stepperPressed:" destination="nfv-on-r4s" eventType="valueChanged" id="Ns3-hf-55N"/>
                                         </connections>
@@ -47,28 +46,53 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="k9e-IE-RMt">
-                                <rect key="frame" x="25" y="260.5" width="364" height="497.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="25" y="260.5" width="364" height="465.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="bTz-ol-1iU">
+                                <rect key="frame" x="20" y="766" width="374" height="32"/>
+                                <subviews>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ksJ-Gz-R9z">
+                                        <rect key="frame" x="0.0" y="0.0" width="51" height="32"/>
+                                        <color key="onTintColor" name="AccentColor"/>
+                                        <connections>
+                                            <action selector="switchMove:" destination="nfv-on-r4s" eventType="valueChanged" id="gG2-dn-fv8"/>
+                                        </connections>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ver número de oro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wkg-mW-mre">
+                                        <rect key="frame" x="77" y="0.0" width="297" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="52n-At-J1i"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Qmw-Rv-b5f"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="Qmw-Rv-b5f" firstAttribute="trailing" secondItem="B8Z-97-vih" secondAttribute="trailing" constant="20" id="0jN-JD-cvo"/>
                             <constraint firstItem="hB9-nC-7up" firstAttribute="centerX" secondItem="UjK-BN-PzK" secondAttribute="centerX" id="4ZL-nU-PU2"/>
+                            <constraint firstItem="Qmw-Rv-b5f" firstAttribute="trailing" secondItem="bTz-ol-1iU" secondAttribute="trailing" constant="20" id="AxX-W5-KBT"/>
+                            <constraint firstItem="bTz-ol-1iU" firstAttribute="leading" secondItem="Qmw-Rv-b5f" secondAttribute="leading" constant="20" id="GWw-En-tPM"/>
                             <constraint firstItem="k9e-IE-RMt" firstAttribute="leading" secondItem="Qmw-Rv-b5f" secondAttribute="leading" constant="25" id="LD7-sl-Ewn"/>
+                            <constraint firstItem="bTz-ol-1iU" firstAttribute="centerX" secondItem="UjK-BN-PzK" secondAttribute="centerX" id="MsR-n3-Z9u"/>
                             <constraint firstItem="k9e-IE-RMt" firstAttribute="centerX" secondItem="UjK-BN-PzK" secondAttribute="centerX" id="NXm-am-ePJ"/>
                             <constraint firstItem="B8Z-97-vih" firstAttribute="centerX" secondItem="UjK-BN-PzK" secondAttribute="centerX" id="ONH-dx-yYB"/>
                             <constraint firstItem="B8Z-97-vih" firstAttribute="leading" secondItem="Qmw-Rv-b5f" secondAttribute="leading" constant="20" id="Xvk-M0-qPo"/>
                             <constraint firstItem="Qmw-Rv-b5f" firstAttribute="trailing" secondItem="hB9-nC-7up" secondAttribute="trailing" constant="20" id="fpD-qY-gAd"/>
+                            <constraint firstItem="bTz-ol-1iU" firstAttribute="bottom" secondItem="Qmw-Rv-b5f" secondAttribute="bottom" constant="-15" id="guJ-a2-jlF"/>
                             <constraint firstItem="B8Z-97-vih" firstAttribute="top" secondItem="hB9-nC-7up" secondAttribute="bottom" constant="40" id="kaH-n8-uxq"/>
                             <constraint firstItem="k9e-IE-RMt" firstAttribute="top" secondItem="B8Z-97-vih" secondAttribute="bottom" constant="30" id="lST-Ae-5dh"/>
                             <constraint firstItem="hB9-nC-7up" firstAttribute="leading" secondItem="Qmw-Rv-b5f" secondAttribute="leading" constant="20" id="nWj-0c-3qO"/>
                             <constraint firstItem="hB9-nC-7up" firstAttribute="top" secondItem="Qmw-Rv-b5f" secondAttribute="top" constant="45" id="r9V-tc-Frt"/>
-                            <constraint firstItem="Qmw-Rv-b5f" firstAttribute="bottom" secondItem="k9e-IE-RMt" secondAttribute="bottom" constant="55" id="rQ0-WS-OJk"/>
+                            <constraint firstItem="bTz-ol-1iU" firstAttribute="top" secondItem="k9e-IE-RMt" secondAttribute="bottom" constant="40" id="rQ0-WS-OJk"/>
                             <constraint firstItem="Qmw-Rv-b5f" firstAttribute="trailing" secondItem="k9e-IE-RMt" secondAttribute="trailing" constant="25" id="u3G-Ym-Dds"/>
                         </constraints>
                     </view>
@@ -76,6 +100,7 @@
                         <color key="badgeColor" name="AccentColor"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="labelGoldNum" destination="Wkg-mW-mre" id="EjV-xG-O7I"/>
                         <outlet property="labelNumber" destination="Vsd-BF-F68" id="RBW-iV-wkg"/>
                         <outlet property="stepperNumber" destination="YeI-zz-R9E" id="WIS-PU-lQm"/>
                         <outlet property="textViewResult" destination="k9e-IE-RMt" id="Kff-Jn-bpo"/>
@@ -205,6 +230,9 @@
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

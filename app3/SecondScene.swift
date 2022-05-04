@@ -13,9 +13,11 @@ class SecondScene: UIViewController {
     @IBOutlet weak var labelNumber: UILabel!
     @IBOutlet weak var stepperNumber: UIStepper!
     @IBOutlet weak var textViewResult: UITextView!
+    @IBOutlet weak var labelGoldNum: UILabel!
     
     var fibonacci : [Int] = []
     var fibId = 1
+    var calGoldNum = false
     
 
     override func viewDidLoad() {
@@ -45,7 +47,24 @@ class SecondScene: UIViewController {
     func updateLabel(id: Int) {
         self.fibId = id
         self.labelNumber.text = "\(self.fibId)"
+        calculateGoldNum()
     }
     
+    @IBAction func switchMove(_ sender: UISwitch) {
+        self.calGoldNum = sender.isOn
+        calculateGoldNum()
+    }
+    
+    func calculateGoldNum() {
+        if(self.calGoldNum) {
+            let last = Double(fibonacci[fibonacci.count - 1])
+            let previous = Double(fibonacci[fibonacci.count - 2])
+            let goldNum = last / previous
+            self.labelGoldNum.text = "\(goldNum)"
+            
+        } else {
+            self.labelGoldNum.text = "Ver el número de oro"
+        }
+    }
 }
 
